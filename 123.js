@@ -52,62 +52,10 @@ var c = [];
 var d = [];
 var e = [];
 
-// for (let i = 0; i < a.length; i++) {
-//     for (let j = 0; j < b.length; j++) {
-//         if (a[i] == b[j]) {
-//             c.push(a[i])
-//         }
-//     }
-// }
-// for (let i = 0; i < c.length-1; i++) {
-//     for (let j = 0; j < c.length-1; j++) {
-//        if (c[j] > c[j+1]) {
-//         let w = c[j];
-//         c[j] = c[j+1];
-//         c[j+1] = w ;
-//        }
-//     }
-// }
-// for (let i = 0; i < c.length-1; i++) {
-//     for (let j = 0; j < c.length-1; j++) {
-//        if (c[j] == c[j+1]) {
-//         c.splice(j,1)
-//        }
-//     }
-// }
-// console.log(c);
-
-
-// e = a.concat(b);
-// for (let i = 0; i < e.length-1; i++) {
-//     for (let j = 0; j < e.length-1; j++) {
-//        if (e[j] > e[j+1]) {
-//         let w = e[j];
-//         e[j] = e[j+1];
-//         e[j+1] = w ;
-//        }
-//     }
-// }
-// for (let i = 0; i < e.length-1; i++) {
-//     for (let j = 0; j < e.length-1; j++) {
-//        if (e[j] == e[j+1]) {
-//         e.splice(j,1)
-//        }
-//     }
-// }
-// console.log(e);
-
-
-
-
-
-
-
 for (let i = 0; i < a.length; i++) {
     for (let j = 0; j < b.length; j++) {
-        if (a[i] !== b[j]) {
-            c.splice(i,1)
-            continue 
+        if (a[i] == b[j]) {
+            c.push(a[i])
         }
     }
 }
@@ -128,3 +76,50 @@ for (let i = 0; i < c.length-1; i++) {
     }
 }
 console.log(c);
+
+
+var d = JSON.parse(JSON.stringify(a));
+for (let i = 0; i < d.length-1; i++) {
+    for (let j = 0; j < d.length-1; j++) {
+       if (d[j] == d[j+1]) {
+        d.splice(j,1)
+       }
+    }
+}
+for (let i = 0; i < d.length-1; i++) {
+    for (let j = 0; j < d.length-1; j++) {
+       if (d[j] > d[j+1]) {
+        let w = d[j];
+        d[j] = d[j+1];
+        d[j+1] = w ;
+       }
+    }
+}
+for (let i = 0; i < b.length; i++) {
+ for (let j = 0; j < d.length; j++) {
+    if (b[i] == d[j]) {
+        d.splice(j,1)   
+    }
+ }
+}
+console.log(d);
+
+
+e = a.concat(b);
+for (let i = 0; i < e.length-1; i++) {
+    for (let j = 0; j < e.length-1; j++) {
+       if (e[j] > e[j+1]) {
+        let w = e[j];
+        e[j] = e[j+1];
+        e[j+1] = w ;
+       }
+    }
+}
+for (let i = 0; i < e.length-1; i++) {
+    for (let j = 0; j < e.length-1; j++) {
+       if (e[j] == e[j+1]) {
+        e.splice(j,1)
+       }
+    }
+}
+console.log(e);
